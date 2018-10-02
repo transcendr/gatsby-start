@@ -24,6 +24,12 @@ jobs:
           name: Install Now CLI
           command: npm install now
       - run:
+          name: Get Current Path
+          command: pwd
+      - run:
+          name: List Files
+          command: ls -a .
+      - run:
           name: Deploy to Now
           command: ls public && cd public && now alias https://public-brtlxzndss.now.sh/ gatsby-start
 workflows:
