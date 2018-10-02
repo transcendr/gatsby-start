@@ -1,5 +1,5 @@
 {
-    "root": "public/",
+    "root": "/",
     "headers": {
         "/**.js": {
         "Cache-Control": "public, max-age=3153600, must-revalidate"
