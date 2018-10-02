@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build_deploy_heroku:
+  build:
     docker:
       - image: circleci/node:9
     steps:
@@ -15,10 +15,7 @@ jobs:
             - node_modules
           key: v1-dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: test
-          command: echo "no test"
-      - run:
-          name: build
+          name: Gatsby Build
           command: npm run build
       - run:
           name: Transfer deploy extra files
@@ -54,4 +51,4 @@ workflows:
   version: 2
   build_and_deploy:
     jobs:
-      - build_deploy_heroku
+      - build
