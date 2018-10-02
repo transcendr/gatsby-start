@@ -9,7 +9,7 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run: 
           name: Install dependencies
-          command: yarn install  
+          command: npm install  
       - save_cache:
           paths:
             - node_modules
@@ -19,13 +19,13 @@ jobs:
           command: echo "no test"
       - run:
           name: build
-          command: yarn build
+          command: npm build
       - run:
           name: Install Now CLI
-          command: yarn global add now
+          command: npm install -g now
       - run:
           name: Deploy to Now
-          command: cd public && now alias https://public-brtlxzndss.now.sh/ gatsby-start
+          command: ls public && cd public && now alias https://public-brtlxzndss.now.sh/ gatsby-start
 workflows:
   version: 2
   build_and_deploy:
