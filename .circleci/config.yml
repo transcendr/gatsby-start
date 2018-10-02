@@ -21,14 +21,21 @@ jobs:
           name: build
           command: npm run build
       - run:
+          name: List Files
+          command: ls -a . 
+  deploy_heroku:
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+  deploy_now:
+    steps:
+      - checkout
+      - run:
           name: Install Now CLI
           command: npm install now
-      - run:
-          name: Get Current Path
-          command: pwd
-      - run:
-          name: List Files
-          command: ls -a .
       - run:
           name: Deploy to Now
           command: ls public && cd public && now alias https://public-brtlxzndss.now.sh/ gatsby-start
@@ -37,3 +44,4 @@ workflows:
   build_and_deploy:
     jobs:
       - build
+      - deploy_heroku
