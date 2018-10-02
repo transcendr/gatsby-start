@@ -9,7 +9,7 @@
     "keywords": [],
     "license": "MIT",
     "scripts": {
-      "start": "serve -s /",
+      "start": "serve",
       "test": "echo \"Error: no test specified\" && exit 1",
       "heroku-postbuild": "ls -a"
     },
