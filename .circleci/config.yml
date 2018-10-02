@@ -25,6 +25,8 @@ jobs:
           command: |
             cd public
             git init
+            git config --global user.email "bryan@iocharged.com"
+            git config --global user.name "Bryan McConnahea"
             git add .
             git commit -am "CirleCI deployment"
             git status
