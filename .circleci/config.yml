@@ -22,7 +22,7 @@ jobs:
           command: npm build
       - run:
           name: Install Now CLI
-          command: npm install -g now
+          command: npm install now
       - run:
           name: Deploy to Now
           command: ls public && cd public && now alias https://public-brtlxzndss.now.sh/ gatsby-start
