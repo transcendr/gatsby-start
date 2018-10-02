@@ -9,7 +9,7 @@ var redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
 // Don't redirect if the hostname is `localhost:port` or the route is `/insecure`
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301));
 
-app.use(serveStatic(path.join(__dirname, 'public'), {
+app.use(serveStatic(__dirname, {
     maxAge: '30d',
     setHeaders: setCustomCacheControl
 }))
