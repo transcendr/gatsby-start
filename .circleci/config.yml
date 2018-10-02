@@ -24,6 +24,8 @@ jobs:
             find * -maxdepth 0 -name '.git' -prune -o -exec rm -rf '{}' ';'
             echo "Files after deletion:"
             ls -a
+            git config --global user.email "bryan@iocharged.com"
+            git config --global user.name "Bryan McConnahea"
             git commit -am "Remove previous deploy files"
             git status
       - run:
@@ -37,8 +39,6 @@ jobs:
           command: |
             cd public
             #git init
-            #git config --global user.email "bryan@iocharged.com"
-            #git config --global user.name "Bryan McConnahea"
             git add .
             git commit -am "CirleCI deployment"
             #git pull https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
