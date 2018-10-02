@@ -21,6 +21,9 @@ jobs:
           name: build
           command: npm run build
       - run:
+          name: Transfer deploy extra files
+          command: cp -a _deploy/public public
+      - run:
           name: List Files
           command: ls -a . 
   deploy_heroku:
