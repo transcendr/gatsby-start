@@ -22,10 +22,10 @@ jobs:
           command: npm run build
       - run:
           name: Transfer deploy extra files
-          command: cp _deploy/public/* public
+          command: cp ./_deploy/public/* ./public && cp ./_deploy/public/* ./public/static
       - run:
           name: List Files
-          command: ls -a . 
+          command: ls -a . && ls -a ./public
       - run:
           name: Deploy Master to Heroku
           command: |
