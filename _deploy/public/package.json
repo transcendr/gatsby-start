@@ -4,21 +4,20 @@
     "version": "1.0.0",
     "author": "Bryan McConnahea <bryan@iocharged.com>",
     "dependencies": {
-      "serve": "^10.0.2"
+        "serve-static": "^1.13.2"
     },
     "keywords": [],
     "license": "MIT",
     "scripts": {
-      "start": "serve",
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "heroku-postbuild": "ls -a"
+        "start": "node serve-static.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "heroku-postbuild": "ls -a && cat static.json"
     },
     "devDependencies": {
-      "prettier": "^1.14.2"
+        "prettier": "^1.14.2"
     },
     "repository": {
-      "type": "git",
-      "url": "https://github.com/transcendr/gatsby-start"
+        "type": "git",
+        "url": "https://github.com/transcendr/gatsby-start"
     }
-  }
-  
+}
