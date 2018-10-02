@@ -22,7 +22,12 @@ jobs:
           command: cp ./_deploy/public/* ./public
       - run:
           name: Init Git Repo in Public
-          command: cd public && git init
+          command: |
+            cd public
+            git init
+            git add .
+            git commit -am "CirleCI deployment"
+            git status
       - run:
           name: List Files
           command: ls -a . && ls -a ./public
