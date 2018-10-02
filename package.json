@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Bryan McConnahea <bryan@iocharged.com>",
   "dependencies": {
-    "express-http-to-https": "^1.1.4",
     "gatsby": "^2.0.0",
     "gatsby-plugin-manifest": "^2.0.2",
     "gatsby-plugin-offline": "^2.0.5",
@@ -28,7 +27,9 @@
   "devDependencies": {
     "prettier": "^1.14.2",
     "serve": "^10.0.2",
-    "serve-static": "^1.13.2"
+    "serve-static": "^1.13.2",
+    "express": "^4.16.3",
+    "express-http-to-https": "^1.1.4"
   },
   "repository": {
     "type": "git",

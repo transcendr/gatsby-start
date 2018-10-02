@@ -4,7 +4,9 @@
     "version": "1.0.0",
     "author": "Bryan McConnahea <bryan@iocharged.com>",
     "dependencies": {
-        "serve-static": "^1.13.2"
+        "serve-static": "^1.13.2",
+        "express": "^4.16.3",
+        "express-http-to-https": "^1.1.4"
     },
     "keywords": [],
     "license": "MIT",
