@@ -15,6 +15,18 @@ jobs:
             - node_modules
           key: v1-dependency-cache-{{ checksum "package.json" }}
       - run:
+          name: Setup Public Folder Repo
+          command: |
+            git clone https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git public
+            cd public
+            git status
+            #delete everything except the .git dir
+            find * -maxdepth 0 -name '.git' -prune -o -exec rm -rf '{}' ';'
+            echo "Files after deletion:"
+            ls -a
+            git commit -am "Remove previous deploy files"
+            git status
+      - run:
           name: Gatsby Build
           command: npm run build
       - run:
@@ -24,9 +36,9 @@ jobs:
           name: Init Git Repo in Public
           command: |
             cd public
-            git init
-            git config --global user.email "bryan@iocharged.com"
-            git config --global user.name "Bryan McConnahea"
+            #git init
+            #git config --global user.email "bryan@iocharged.com"
+            #git config --global user.name "Bryan McConnahea"
             git add .
             git commit -am "CirleCI deployment"
             #git pull https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
