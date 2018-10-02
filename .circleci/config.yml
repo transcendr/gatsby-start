@@ -1,5 +1,5 @@
 version: 2
-jobs:
+jobs: 
   build:
     branches:
       only: master
@@ -11,27 +11,27 @@ jobs:
         key: dependency-cache-{{ checksum "package.json" }}
         key: v1-dependencies-
 
-        - run: 
-          name: Install dependencies
-          command: yarn install
-        
-        - save_cache
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+      - run: 
+        name: Install dependencies
+        command: yarn install
+      
+      - save_cache
+        paths:
+          - node_modules
+        key: v1-dependencies-{{ checksum "package.json" }}
 
-        - run:
-          name: test
-          command: echo "no test"
+      - run:
+        name: test
+        command: echo "no test"
 
-        - run:
-          name: build
-          command: yarn build
+      - run:
+        name: build
+        command: yarn build
 
-        - run:
-          name: Install Now CLI
-          command: yarn global add now-cli
+      - run:
+        name: Install Now CLI
+        command: yarn global add now-cli
 
-        - run:
-          name: Deploy to Now
-          command: cd public && now alias https://public-brtlxzndss.now.sh/ gatsby-start
+      - run:
+        name: Deploy to Now
+        command: cd public && now alias https://public-brtlxzndss.now.sh/ gatsby-start
