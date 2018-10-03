@@ -7,6 +7,7 @@
     "gatsby": "^2.0.0",
     "gatsby-plugin-manifest": "^2.0.2",
     "gatsby-plugin-offline": "^2.0.5",
+    "gatsby-plugin-page-transitions": "^1.0.7",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-source-contentful": "2.0.1",
     "react": "^16.5.1",
@@ -25,11 +26,11 @@
     "heroku-postbuild": "gatsby build"
   },
   "devDependencies": {
+    "express": "^4.16.3",
+    "express-http-to-https": "^1.1.4",
     "prettier": "^1.14.2",
     "serve": "^10.0.2",
-    "serve-static": "^1.13.2",
-    "express": "^4.16.3",
-    "express-http-to-https": "^1.1.4"
+    "serve-static": "^1.13.2"
   },
   "repository": {
     "type": "git",
